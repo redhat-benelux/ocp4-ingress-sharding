@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: django-psql-example
+    template: django-psql-example
+    type: external
+  name: django-psql-example
+  namespace: external-project
+spec:
+  host: django-psql-example-external-project.apps.uat.cluster.my.lab
+  subdomain: ""
+  to:
+    kind: Service
+    name: django-psql-example
+    weight: 100
+  wildcardPolicy: None

@@ -1,0 +1,16 @@
+apiVersion: v1
+items:
+- apiVersion: operator.openshift.io/v1
+  kind: IngressController
+  metadata:
+    name: default 
+    namespace: openshift-ingress-operator
+  spec:
+    routeSelector:
+      matchLabels:
+        type: internal
+  status: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""

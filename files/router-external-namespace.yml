@@ -1,0 +1,26 @@
+apiVersion: v1
+items:
+- apiVersion: operator.openshift.io/v1
+  kind: IngressController
+  metadata:
+    name: external
+    namespace: openshift-ingress-operator
+  spec:
+    domain: apps.uat.cluster.my.lab
+    endpointPublishingStrategy:
+      type: HostNetwork
+    nodePlacement:
+      nodeSelector:
+        matchLabels:
+          node-role.kubernetes.io/worker: ""
+    namespaceSelector:
+      matchLabels:
+        environment: uat
+    routeSelector:
+      matchLabels:
+        type: external
+  status: {}
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
