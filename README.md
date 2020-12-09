@@ -55,74 +55,12 @@ $ oc get ingresscontroller default -n openshift-ingress-operator -o yaml
 apiVersion: operator.openshift.io/v1
 kind: IngressController
 metadata:
-  creationTimestamp: "2020-10-08T08:10:19Z"
   finalizers:
   - ingresscontroller.operator.openshift.io/finalizer-ingresscontroller
-  generation: 1
-  managedFields:
-  - apiVersion: operator.openshift.io/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:finalizers:
-          .: {}
-          v:"ingresscontroller.operator.openshift.io/finalizer-ingresscontroller": {}
-      f:spec:
-        .: {}
-        f:replicas: {}
-      f:status:
-        .: {}
-        f:availableReplicas: {}
-        f:conditions: {}
-        f:domain: {}
-        f:endpointPublishingStrategy:
-          .: {}
-          f:type: {}
-        f:observedGeneration: {}
-        f:selector: {}
-        f:tlsProfile:
-          .: {}
-          f:ciphers: {}
-          f:minTLSVersion: {}
-    manager: ingress-operator
-    operation: Update
-    time: "2020-10-08T21:32:25Z"
   name: default
   namespace: openshift-ingress-operator
-  resourceVersion: "144045"
-  selfLink: /apis/operator.openshift.io/v1/namespaces/openshift-ingress-operator/ingresscontrollers/default
-  uid: fdb4df6f-e13b-4abe-9b78-ff78a8d45c51
 spec:
   replicas: 2
-status:
-  availableReplicas: 2
-  conditions:
-  - lastTransitionTime: "2020-10-08T08:10:20Z"
-    reason: Valid
-    status: "True"
-    type: Admitted
-  - lastTransitionTime: "2020-10-08T21:32:17Z"
-    status: "True"
-    type: Available
-  - lastTransitionTime: "2020-10-08T21:32:17Z"
-    message: The deployment has Available status condition set to True
-    reason: DeploymentAvailable
-    status: "False"
-    type: DeploymentDegraded
-  - lastTransitionTime: "2020-10-08T08:10:23Z"
-    message: The configured endpoint publishing strategy does not include a managed
-      load balancer
-    reason: EndpointPublishingStrategyExcludesManagedLoadBalancer
-    status: "False"
-    type: LoadBalancerManaged
-  - lastTransitionTime: "2020-10-08T08:10:23Z"
-    message: No DNS zones are defined in the cluster dns config.
-    reason: NoDNSZones
-    status: "False"
-    type: DNSManaged
-  - lastTransitionTime: "2020-10-08T21:32:07Z"
-    status: "False"
-    type: Degraded
   domain: apps.dta.my.lab
   endpointPublishingStrategy:
     type: HostNetwork
